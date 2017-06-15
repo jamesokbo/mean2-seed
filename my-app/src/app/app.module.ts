@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent} from './profile/profile.component';
 
 import { ROUTES } from './app.routes';
 
@@ -17,14 +16,13 @@ import { CallbackComponent } from './callback/callback.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent,
     CallbackComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, {})
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
