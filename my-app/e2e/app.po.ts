@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class CentralizedLoginPage {
+export class AuthorizationPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,22 +1,32 @@
-# Auth0 Angular Login
+# Auth0 Angular Authorization
 
-This sample demonstrates how to add authentication to an Angular application using Auth0's Lock widget from the hosted login page. The sample uses the Angular CLI.
+This sample demonstrates how to include user authorization in an Angular application with Auth0. The sample uses the Angular CLI.
 
 ## Getting Started
 
 If you haven't already done so, [sign up](https://auth0.com) for your free Auth0 account and create a new client in the [dashboard](https://manage.auth0.com). Find the **domain** and **client ID** from the settings area and add the URL for your application to the **Allowed Callback URLs** box. If you are using the server provided by the Angular CLI, that URL is `http://localhost:4200`.
 
+You must ensure that the APIs section is enabled in your Auth0 dashboard. To do so, go to the [Advanced Settings](https://manage.auth0.com/#/account/advanced) area and verify that **Enable APIs Section** is switched on. Next, navigate to APIs in the sidebar and create a new API. The identifier for your API will be required later.
+
 Clone the repo or download it from the Angular quickstart page in Auth0's documentation. Install the Angular CLI and the dependencies for the app.
 
 ```bash
 npm install -g @angular/cli
-cd 01-Login
+cd 04-Authorization
 npm install
 ```
 
-## Set the Client ID and Domain
+## Set the Client ID, Domain, and API URL
 
 If you download the sample from the quickstart page, it will come pre-populated with the **client ID** and **domain** for your application. If you clone the repo directly from Github, rename the `auth0-variables.ts.example` file to `auth0-variables.ts` and provide the **client ID** and **domain** there. This file is located in `src/app/auth/`.
+
+You should also provide the identifier for the API you create in the Auth0 dashboard as your `apiUrl`.
+
+## Set Up the `.env` File
+
+In addition to the above-mentioned `auth0-variables.ts` file, a `.env` file is provided at the root of the application. This file provides your application's credentials to the small Node server located in `server.js`.
+
+This file has two values, `AUTH0_AUDIENCE` and `AUTH0_DOMAIN`. If you download this sample from the quickstart page, the value for `AUTH0_DOMAIN` will be populated automatically, but you will still need to populate `AUTH0_AUDIENCE` manually. The value for `AUTH0_AUDIENCE` is the identifier used for an API that you create in the Auth0 dashboard.
 
 ## Run the Application
 

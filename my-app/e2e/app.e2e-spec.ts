@@ -1,10 +1,10 @@
-import { CentralizedLoginPage } from './app.po';
+import { AuthorizationPage } from './app.po';
 
-describe('centralized-login App', () => {
-  let page: CentralizedLoginPage;
+describe('authorization App', () => {
+  let page: AuthorizationPage;
 
   beforeEach(() => {
-    page = new CentralizedLoginPage();
+    page = new AuthorizationPage();
   });
 
   it('should display message saying app works', () => {
